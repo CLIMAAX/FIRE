@@ -1,0 +1,35 @@
+name: climaax_fire
+
+channels:
+    - conda-forge
+
+dependencies:
+        - python=3.11
+        - gdal
+        - numpy
+        - geopandas
+        - rasterio
+        - matplotlib
+        - tqdm
+        - pip
+        - jupyterlab
+        - xlrd
+        - pyproj
+        - xarray
+        - rioxarray
+        - osmnx
+        - leafmap
+        - eccodes
+        - earthkit-data
+        - cfgrib
+        - scipy
+        - cartopy
+        - pandas
+        - ipywidgets
+        - ipympl
+        - nbmake
+        - pytest
+        - pip:
+            - netcdf4
+            - damagescanner
+            - jupyterlab_myst
