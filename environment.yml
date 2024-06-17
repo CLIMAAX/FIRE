@@ -29,6 +29,8 @@ dependencies:
         - ipympl
         - nbmake
         - pytest
+        - pooch
+        - p7zip
         - pip:
             - netcdf4
             - damagescanner
