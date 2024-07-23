@@ -35,3 +35,7 @@ dependencies:
             - netcdf4
             - damagescanner
             - jupyterlab_myst
+            - cdsapi
+            - json
+            - urllib
+            - zipfile
