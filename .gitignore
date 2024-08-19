@@ -1,5 +1,8 @@
 #Data directory
-**/data/
+01_wildfire_ML/data_cat/
+01_wildfire_ML/dem_processing/
+01_wildfire_ML/resized_climate/
+01_wildfire_ML/ECLIPS2.0/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
