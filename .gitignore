@@ -4,6 +4,10 @@
 01_wildfire_ML/resized_climate/
 01_wildfire_ML/ECLIPS2.0/
 
+*.tif
+*.tiff
+*.7z
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
