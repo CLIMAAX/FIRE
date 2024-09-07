@@ -15,12 +15,14 @@ dependencies:
     - jupyterlab-myst=2.4.2
     - jupyterlab=4.2.3
     - matplotlib=3.8.4
+    - mplleaflet=0.0.5
     - netcdf4=1.7.1
     - notebook=7.2.1
     - numpy=1.26.4
     - openpyxl=3.1.4
     - p7zip=16.02
     - pandas=2.2.2
+    - paretoset=1.2.4
     - pip
     - pooch=1.8.2
     - pyproj=3.6.1
