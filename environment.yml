@@ -22,7 +22,6 @@ dependencies:
     - openpyxl=3.1.4
     - p7zip=16.02
     - pandas=2.2.2
-    - paretoset=1.2.4
     - pip
     - pooch=1.8.2
     - pyproj=3.6.1
@@ -34,3 +33,5 @@ dependencies:
     - tqdm=4.66.4
     - xarray=2024.6.0
     - xlrd=2.0.1
+    - pip:
+        - paretoset==1.2.4
