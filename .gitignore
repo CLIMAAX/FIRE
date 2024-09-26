@@ -1,6 +1,7 @@
 #Data directory
 01_wildfire_ML/data*
 01_wildfire_ML/ECLIPS2.0/
+02_wildfire_FWI/FWI_workflow/
 
 *.tif
 *.tiff
