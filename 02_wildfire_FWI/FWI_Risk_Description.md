@@ -4,7 +4,7 @@
 In this workflow we will produce an assessment of wildfire development risk based on the seasonal Fire Weather Index and a range of parameters linked to wildfire vulnerability. On one hand, this workflow provides a simple tool to assess which areas of a region have the most suitable setting for wildfire development based on climatic conditions and fuel availability. On the other, it informs the users on which areas are the most vulnerable to wildfire from a human, economic and environmental point of view. Synthetizing infromation about wildfire danger and vulnerability, the workflow finally produces an assessment of wildfire risk, pointing out which areas should be prioritised by adaptation measures.
 
 ## Methodology
-Wildfire risk is defined following the approach of the European Forest Fire Information System (EFFIS), characterizing it as the combination of wildfire danger and vulnerability (Jacome Felix Oom, 2022). The figure below offers a schematic representation of the risk assessment methodology and lists the parameters used to define each risk component. 
+Wildfire risk is defined following the approach of the European Forest Fire Information System (EFFIS), characterizing it as the combination of wildfire danger and vulnerability [(Jacome Felix Oom, 2022)](doi:10.2760/437309). The figure below offers a schematic representation of the risk assessment methodology and lists the parameters used to define each risk component. 
 
 ![risk_graphic](FWI_description_graphic.png)
 
@@ -28,9 +28,9 @@ This workflow consists of two separate notebooks, one for the hazard assessment 
 
 In the next pages you will find:
 
-- FWI Hazard Assessment [notebook](), where you can explore FWI seasonal and daily data and get information of the projected changes of the fire weather season length in your region
+- FWI Hazard Assessment [notebook](FWI_Hazard_Assessment.ipynb), where you can explore FWI seasonal and daily data and get information of the projected changes of the fire weather season length in your region
 
-- FWI Risk Assessment [notebook](), where you can perform the wildfire risk assessment based on the seasonal FWI and the EFFIS vulnerability parameters.
+- FWI Risk Assessment [notebook](FWI_Risk_Assessment.ipynb), where you can perform the wildfire risk assessment based on the seasonal FWI and the EFFIS vulnerability parameters.
 
 ## Contributors
 
