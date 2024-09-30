@@ -21,7 +21,7 @@ The danger indicator is combined witht the vulnerability parameters through a Pa
 
 ## Data sources
 
-The [seasonal](https://cds-beta.climate.copernicus.eu/datasets/cems-fire-seasonal?tab=overview) and [daily](https://cds-beta.climate.copernicus.eu/datasets/sis-tourism-fire-danger-indicators?tab=overview) Fire Weather Index data are produced by global and regional climate models and sourced from the Copernicus Climate Data Store. The burnable vegetation and all the vulnerability parameters are sourced from [EFFIS](https://forest-fire.emergency.copernicus.eu/apps/fire.risk.viewer/). 
+The [seasonal](https://cds.climate.copernicus.eu/datasets/cems-fire-seasonal?tab=overview) and [daily](https://cds.climate.copernicus.eu/datasets/sis-tourism-fire-danger-indicators?tab=overview) Fire Weather Index data are produced by global and regional climate models and sourced from the Copernicus Climate Data Store. The burnable vegetation and all the vulnerability parameters are sourced from [EFFIS](https://forest-fire.emergency.copernicus.eu/apps/fire.risk.viewer/).
  
 ## Structure of the workflow
 This workflow consists of two separate notebooks, one for the hazard assessment and one for the risk assessment. 
