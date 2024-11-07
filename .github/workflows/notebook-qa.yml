@@ -26,4 +26,6 @@ jobs:
       - name: Install QA packages
         run: pip install nbqa pylint
       - name: Run linter
-        run: nbqa pylint --output-format=colorized .
+        run: |
+          nbqa pylint --output-format=colorized .
+          pylint --output-format=colorized --allow-global-unused-variables=yes .
