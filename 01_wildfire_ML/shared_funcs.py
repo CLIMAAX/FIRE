@@ -4,6 +4,11 @@ A workflow from the CLIMAAX Handbook and FIRE GitHub repository.
 
 https://handbook.climaax.eu/
 https://github.com/CLIMAAX/FIRE
+
+Contributors:
+- Andrea Trucchia (Andrea.trucchia@cimafoundation.org)
+- Farzad Ghasemiazma (Farzad.ghasemiazma@cimafoundation.org)
+- Giorgio Meschi (Giorgio.meschi@cimafoundation.org)
 """
 
 import os
