@@ -45,7 +45,7 @@ def save_raster_as(array, output_file, reference_file, **kwargs):
 def plot_raster_V2(raster, ref_arr, cmap='seismic', title='', figsize=(10, 8), dpi=300, outpath=None,
         array_classes=[], classes_colors=[], classes_names=[], shrink_legend=1, xy=(0.5, 1.1), labelsize=10,
         basemap=False, basemap_params = {'crs' : 'EPSG:4326', 'source' : None, 'alpha' : 0.5, 'zoom' : '11'},
-        add_to_ax: tuple = None):
+        add_to_ax: tuple = None, plot_kwargs=None):
     '''Plot a raster object with possibility to add basemap and continuing to build upon the same ax.
 
     Example with discrete palette:
@@ -55,6 +55,9 @@ def plot_raster_V2(raster, ref_arr, cmap='seismic', title='', figsize=(10, 8), d
 
     add_to_ax: pass an axs to overlay other object to the same ax. it is a tuple (fig, ax)
     '''
+    if plot_kwargs is None:
+        plot_kwargs = {}
+    
     if add_to_ax is None:
         fig, ax = plt.subplots(figsize=figsize, dpi=dpi)
     else:
@@ -67,7 +70,7 @@ def plot_raster_V2(raster, ref_arr, cmap='seismic', title='', figsize=(10, 8), d
 
         # plot the raster
         f = show(np.where(ref_arr == -9999, np.nan,raster), ax=ax,
-                cmap=cmap, norm=norm, interpolation='none')
+                cmap=cmap, norm=norm, interpolation='none', **plot_kwargs)
 
         img = f.get_images()[0]
 
@@ -84,7 +87,7 @@ def plot_raster_V2(raster, ref_arr, cmap='seismic', title='', figsize=(10, 8), d
         cbar.ax.tick_params(labelsize = labelsize)
     else:
         # use imshow so that we have something to map the colorbar to
-        image = show(np.where(ref_arr == -9999, np.nan,raster), ax=ax, cmap = cmap)
+        image = show(np.where(ref_arr == -9999, np.nan,raster), ax=ax, cmap=cmap, **plot_kwargs)
         img = image.get_images()[0]
         cbar = fig.colorbar(img, ax=ax, shrink=shrink_legend)
         cbar.ax.tick_params(labelsize=labelsize)
@@ -482,3 +485,63 @@ def fit_and_print_stats(model, X_train, y_train, X_test, y_test, columns):
                                                 reverse=True)}
     for i in dict_imp_sorted:
         print(f'{i} : {round(dict_imp_sorted[i], 2)}')
+
+
+### Functions to define hazard ###
+
+def corine_to_fuel_type(corine_codes_array, converter_dict, visualize_result = False):
+    """Convert the corine land cover raster to a raster with the fuel types.
+    
+    The fuel types are defined in the converter_dict dictionary.
+    """
+    converted_band = np.vectorize(converter_dict.get)(corine_codes_array)
+    converted_band[converted_band == None] = -1
+    #convert to int
+    converted_band = converted_band.astype(int)
+    if visualize_result:
+        plt.matshow(converted_band)
+        # discrete colorbar
+        plt.colorbar(ticks=[0, 1, 2, 3, 4, 5, 6])
+    return converted_band
+
+
+def susc_classes( susc_arr, quantiles):
+    '''Take a raster map and a list of quantiles and returns a categorical raster map related to the quantile classes.
+    
+    Parameters:
+    susc_arr: the susceptibility array
+    quantiles: the quantiles to use to create the classes (see np.digitize documentation)
+    '''
+    bounds = list(quantiles)
+    # Convert the raster map into a categorical map based on quantile values
+    out_arr = np.digitize(susc_arr, bounds, right=True)
+    out_arr = out_arr.astype(np.int8)
+    return out_arr
+
+
+def contigency_matrix_on_array(xarr, yarr, xymatrix, nodatax, nodatay):
+    '''
+    xarr: 2D array, rows entry of contingency matrix
+    yarr: 2D array, cols entry of contingency matrix
+    xymatrix: 2D array, contingency matrix
+    nodatax1: value for no data in xarr : if your array has nodata = np.nan >> nodatax or nodatay has to be 1
+    nodatax2: value for no data in yarr : if your array has nodata = np.nan >> nodatax or nodatay has to be 1
+    '''
+    # if arr have nan, mask it with lowest class
+    xarr = np.where(np.isnan(xarr)==True , 1, xarr)
+    yarr = np.where(np.isnan(yarr)==True , 1, yarr)
+    # convert to int
+    xarr = xarr.astype(int)
+    yarr = yarr.astype(int)
+
+    mask = np.where(((xarr == nodatax) | (yarr ==nodatay)), 0, 1)
+
+    # put lowest class in place of no data
+    yarr[~mask] = 1
+    xarr[~mask] = 1
+
+    # apply contingency matrix
+    output = xymatrix[ xarr - 1, yarr - 1]
+    # mask out no data
+    output[~mask] = 0
+    return output
