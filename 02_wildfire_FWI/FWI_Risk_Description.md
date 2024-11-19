@@ -17,7 +17,7 @@ On the other hand, in line with EFFIS methodology, wildfire vulnerability is her
 - **Population Density**
 - **Ecosystem Restoration Cost** Index, representing the relative restoration cost of land in case of loss by wildfire
 
-The danger indicator is combined witht the vulnerability parameters through a Pareto analysis algorithm, which identifies the areas inside the region having the highest danger and vulnerability scores (see figure). The use of the Pareto analysis allows to introduce a fundamental element of novelty: the possibility for the user to independently choose which vulnerability parameters to include in the risk assessment, so that only the most relevant risk (i.e., human, ecological or economic) is taken into consideration. In addition, this approach allows users to easily introduce other vulnerability indicators than the provided ones based on their regional needs and embed them into the assessment.
+The danger indicator is combined with the vulnerability parameters through a Pareto analysis algorithm, which identifies the areas inside the region having the highest danger and vulnerability scores (see figure). The use of the Pareto analysis allows to introduce a fundamental element of novelty: the possibility for the user to independently choose which vulnerability parameters to include in the risk assessment, so that only the most relevant risk (i.e., human, ecological or economic) is taken into consideration. In addition, this approach allows users to easily introduce other vulnerability indicators than the provided ones based on their regional needs and embed them into the assessment.
 
 ## Data sources
 
