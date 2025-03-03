@@ -1,4 +1,4 @@
-# Wildfire response to climate change and affected population
+# Wildfire workflow: FWI response to climate change and affected population
 
 :::{warning}
 
@@ -16,9 +16,15 @@ It is therefore important to consider multiple influential variables in combinat
 
 ## Hazard assessment methodology
 
-In this workflow, the potential for wildfire development is quantified by the Fire Weather Index (FWI), which combines multiple atmospheric variables into an assessment of fire danger.
+In this workflow, the potential for wildfire development is quantified by the **Fire Weather Index (FWI)**, which combines multiple atmospheric variables into an assessment of fire danger.
 The response of local FWI statistics is modelled as a function of changes to both mean temperature and precipitation (relative to a baseline climate), using the methodology and simulations of [El Garroussi et al. (2024)](https://doi.org/10.1038/s41612-024-00575-8).
 The constructed response model can be applied to projections of temperature and precipitation from climate models to estimate future changes to regional FWI statistics and their sensitivity to model uncertainty.
+
+Hazard assessment in three parts (one notebook each):
+
+1. [Historical climate](hazard_assessment_historical.ipynb)
+2. [Response surface methodology](hazard_assessment_response.ipynb)
+3. [Climate projections](hazard_assessment_projections.ipynb)
 
 
 ### Advantages
@@ -57,6 +63,8 @@ The constructed response model can be applied to projections of temperature and 
 
 Count the population affected at specific levels of hazard.
 
+- [Affected population](risk_assessment_population.ipynb)
+
 
 ## Datasets
 
@@ -91,14 +99,6 @@ The workflow produces an impact response surface for the probability of exceedan
 Projections of mean temperature and precipitation change are overlaid on the IRS to estimate changes in FWI statistics and their sensitivity to projection uncertainty.
 
 TODO: show figures with example outputs
-
-
-## Structure
-
-1. [Hazard assessment — historical climate](hazard_assessment_historical.ipynb)
-2. [Hazard assessment — response surface methodology](hazard_assessment_response.ipynb)
-3. [Hazard assessment — climate projections](hazard_assessment_projections.ipynb)
-4. [Risk assessment — affected population](risk_assessment_population.ipynb)
 
 
 ## References
