@@ -34,4 +34,4 @@ dependencies:
     - xarray=2024.6.0
     - xlrd=2.0.1
     - pip:
-        - git+https://github.com/tommyod/paretoset@5d8f3a739eeb38fb0b63340840353ad99845a5f0
+        - "git+https://github.com/tommyod/paretoset.git@5d8f3a739eeb38fb0b63340840353ad99845a5f0"
