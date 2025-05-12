@@ -2,6 +2,7 @@ name: climaax_fire
 
 channels:
     - conda-forge
+    - nodefaults
 
 dependencies:
     - affine=2.4.0
