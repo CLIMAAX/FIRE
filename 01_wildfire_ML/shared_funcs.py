@@ -494,9 +494,10 @@ def corine_to_fuel_type(corine_codes_array, converter_dict, visualize_result = F
     
     The fuel types are defined in the converter_dict dictionary.
     """
-    converted_band = np.vectorize(converter_dict.get)(corine_codes_array)
-    converted_band[converted_band == None] = -1
-    #convert to int
+    # Use float type to allow for NaN fill for unsuccessful lookups
+    converted_band = np.vectorize(converter_dict.get, otypes=[np.float64])(corine_codes_array)
+    # Fill with int-compatible placeholder value and convert to int for output
+    converted_band = np.nan_to_num(converted_band, nan=-1)
     converted_band = converted_band.astype(int)
     if visualize_result:
         plt.matshow(converted_band)
