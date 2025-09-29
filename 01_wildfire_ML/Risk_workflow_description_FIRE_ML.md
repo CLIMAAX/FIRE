@@ -48,7 +48,7 @@ Use the [data request form from EFFIS](https://forest-fire.emergency.copernicus.
 :::
 
 
-## Risk Assesment Methodology
+## Risk Assessment Methodology
 
 The risk assessment methodology is based on the hazard maps produced in the previous step and the exposure data. The exposure data is based on primary layers, and derived layers. In the first category we use exposed elements from Open Street Map (roads, hospitals, schools) and polygons of wildland-urban interfaces, derived from the land use input (the default one is again the CORINE). In the second category we use the different rasters of vulnerability (that is, which include the exposed element densities and their vulnerability to fire) made available by EFFIS: population vulnerability, ecological vulnerability, and economic vulnerability. In both cases, risk is obtained by crossing hazard and exposure  (or exposure times vulnerability) data by the means of contingency tables. The risk is given as a discrete indicator ranging from 1 to 4.
 
