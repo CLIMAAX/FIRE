@@ -11,6 +11,7 @@ Part of the [Climate Risk Assessment handbook](https://handbook.climaax.eu/noteb
 
 - [Wildfire (machine learning approach)](01_wildfire_ML/)
 - [Wildfire with Fire Weather Index](02_wildfire_FWI/)
+- [FWI response surface model, climate projections and affected population](03_response_model_FWI/)
 
 
 ## How to run
