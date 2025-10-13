@@ -1,4 +1,4 @@
-# Wildfire workflow: FWI response to climate change and affected population
+# Wildfire workflow: FWI response surface model, climate projections and affected population
 
 This workflow is designed to support the estimation of regional wildfire hazard and the population affected in the context of climate change.
 
@@ -26,7 +26,7 @@ Understanding the probability of exceedance helps to assess fire risk under vari
 
 :::{dropdown} Impact response surface (IRS)
 
-A model for the response of a dependent variable (here: the probability of exceedance of a FWI threshold) to changes in a set of explanatory variables (here: mean temperature and precipitation).
+A model for the sensitivity/response of a dependent variable (here: the probability of exceedance of a FWI threshold) to changes in a set of explanatory variables (here: mean temperature and precipitation).
 The IRS is constructed empirically from a reference dataset of both the explanatory and corresponding dependent variables.
 Once constructed, it can be used to evaluate a response and the associated sensitivity to uncertainty for given values of the explanatory variables within the range covered by the reference dataset.
 :::
@@ -53,7 +53,8 @@ The hazard assessment has three parts (one notebook each):
 
 ### Advantages
 
-- Once constructed, the response model can be used to estimate FWI statistics for a wide range of temperature and precipitation change scenarios.
+- The methodology is scenario neutral.
+  Once constructed, the response model can be used to estimate FWI statistics for a wide range of temperature and precipitation change scenarios.
   Projections of temperature and precipitation change for which no corresponding FWI data are available can be utilized.
 - The impact response surface can easily be visualized and analysed in the space of mean temperature and precipitation changes, e.g. by plotting the yearly probability of exceedance for a given FWI threshold.
 - The response model predicts statistics of the FWI, even if the temperature and precipitation change under consideration would otherwise not be suitable to reliably compute statistics.
