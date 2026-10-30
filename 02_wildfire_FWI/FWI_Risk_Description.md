@@ -36,5 +36,5 @@ In the next pages you will find:
 
 Euro-Mediterranean Center on Climate Change [(CMCC)](https://www.cmcc.it), Italy.
 
-Author of the workflow: Andrea Rivosecchi
+Authors of the workflow: Andrea Rivosecchi, Antonio Trabucco
 
